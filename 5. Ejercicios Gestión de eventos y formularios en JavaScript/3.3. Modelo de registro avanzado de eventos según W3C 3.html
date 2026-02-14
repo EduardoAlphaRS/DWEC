@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+
+    <title>Uso de la palabra reservada this</title>
+
+    <script type="text/javascript">
+
+        window.onload = () => 
+        {
+
+            const cambiarColorFondo = function(e)  
+            {   
+                e.preventDefault(); // Evita que el enlace actúe como tal 
+                this.style.backgroundColor = '#cc0000';
+            }
+
+            const enlace = document.getElementById("miEnlace");
+            enlace.addEventListener('click', cambiarColorFondo, false);
+
+            const remover = document.getElementById('removerEfecto');
+            
+            remover.addEventListener('click', (e) => { 
+                e.preventDefault(); // Evita el salto de página  
+                
+                // 1. Quitamos la capacidad de cambiar de color en el futuro                
+                enlace.removeEventListener('click', cambiarColorFondo, false)
+
+                // 2. Limpiamos el color actual para VER que ha funcionado
+                enlace.style.backgroundColor = '';                
+            }, false);
+        };
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <h2>Ejemplo de Eventos W3C</h2>
+
+    <a id="miEnlace" href="#">Enlace cambia de color.</a>
+
+    <BR><BR><BR>
+
+    <a id="removerEfecto" href="#">Remover el color.</a> 
+
+</body>
+
+</html>

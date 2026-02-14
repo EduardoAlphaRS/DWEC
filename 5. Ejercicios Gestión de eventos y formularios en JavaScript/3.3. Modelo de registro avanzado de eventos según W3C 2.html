@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+
+    <title>Uso de la palabra reservada this</title>
+
+    <script type="text/javascript">
+
+        window.onload = () => 
+        {
+
+            const enlace = document.getElementById('miEnlace');
+
+            enlace.addEventListener('click', function(event)   
+            {
+                this.style.backgroundColor = '#cc0000';
+            }, false);    
+          
+        };
+
+    </script>
+
+</head>
+
+<body>
+
+    <h2>Ejemplo de Eventos W3C</h2>
+
+    <a id="miEnlace" href="#">Enlace cambia de color.</a>
+
+</body>
+
+</html>

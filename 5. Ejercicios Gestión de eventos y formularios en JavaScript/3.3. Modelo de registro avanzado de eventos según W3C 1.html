@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+
+    <title>Uso de la palabra reservada this</title>
+
+    <script type="text/javascript">
+
+        window.onload = () => 
+        {
+    
+            const alertar = () => 
+            {     
+                alert('Te conectaremos con la página: https://www.google.com'); 
+            }
+
+            document.getElementById("miEnlace").addEventListener('click', alertar, false);            
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <h2>Ejemplo de Eventos W3C</h2>
+
+    <a id="miEnlace" href="https://www.google.com">Ir a Google</a>
+
+</body>
+
+</html>

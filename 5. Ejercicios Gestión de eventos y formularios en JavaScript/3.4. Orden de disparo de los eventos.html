@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Orden de Disparo de Eventos - Modelo W3C</title>
+    <style>
+        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; padding: 50px; }
+        
+        /* Estilos similares a tu imagen */
+        #elemento1 {
+            width: 300px;
+            height: 150px;
+            background-color: #008000; /* Verde */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        #elemento2 {
+            width: 150px;
+            height: 50px;
+            background-color: #FFD700; /* Amarillo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            cursor: pointer;
+            border: 1px solid #000;
+        }
+
+        #consola {
+            margin-top: 20px;
+            padding: 10px;
+            background: #eee;
+            width: 400px;
+            border-radius: 5px;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Modelo W3C: Captura vs Burbujeo</h2>
+
+    <div id="elemento1">
+        Elemento 1 (Padre)
+        <div id="elemento2">Elemento 2 (Hijo)</div>
+    </div>
+
+    <div id="consola">
+        <strong>Orden de ejecución:</strong>
+        <ul id="lista-eventos"></ul>
+    </div>
+
+    <button onclick="limpiar()">Limpiar consola</button>
+
+    <script>
+        const el1 = document.getElementById('elemento1');
+        const el2 = document.getElementById('elemento2');
+        const lista = document.getElementById('lista-eventos');
+
+        // FUNCIÓN PARA LOGUEAR
+        function log(texto, color) {
+            const li = document.createElement('li');
+            li.textContent = texto;
+            li.style.color = color;
+            lista.appendChild(li);
+        }
+
+        // ELEMENTO 1: Configurado en Fase de CAPTURA (true)
+        // Se disparará PRIMERO cuando el evento baja hacia el hijo.
+        el1.addEventListener('click', () => {
+            log("1. Fase de CAPTURA: Se dispara Elemento 1 (Padre)", "green");
+        }, true);
+
+        // ELEMENTO 2: Configurado en Fase de BURBUJEO (false)
+        // Se disparará SEGUNDO cuando el evento llega al objetivo y empieza a subir.
+        el2.addEventListener('click', (event) => {
+            log("2. Fase de BURBUJEO: Se dispara Elemento 2 (Hijo)", "orange");
+            
+            // Si quieres detener la propagación aquí, descomenta la línea de abajo:
+            // event.stopPropagation();
+        }, false);
+
+        function limpiar() {
+            lista.innerHTML = "";
+        }
+    </script>
+</body>
+</html>

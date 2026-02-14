@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html>
+
+<head>
+
+     <!-- defer para que no tengas problemas de carga -->
+
+     <script src="./js/formulario.js"> </script>
+
+</head>
+
+<body>
+
+     <div  id  = menulateral>
+
+          <form  id = contactar name = contactar action="">
+
+               <label for = "nombre"> Nombre: </label>
+               <input type = "text" id = "nombre" name = "nombre" required>
+
+
+               <label for = "apellido"> Apellido: </label>
+               <input type = "text" id = "apellido" name = "apellido" required>
+
+
+               <!--  return false: ver el resultado sin que la página se refresque instantáneamente. -->
+               <button type = "submit" onclick = "recorrerFormulario();" return false;>Enviar Mensaje</button>
+          </form>
+
+     </div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+     
