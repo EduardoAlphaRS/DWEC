@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="es-ES">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>Ambito de Variables.</title>
+
+
+        <script>
+            // Ha llegado la hora de distinguir entre las variables que se definen fuera de una función, y las que se definen dentro de las funciones.
+
+            // Las variables que se definen fuera de las funciones se llaman variables globales. Las variables que se definen dentro de las funciones se llaman variables locales.
+
+            // Una variable global en JavaScript tiene una connotación un poco diferente, comparando con otros lenguajes de programación. 
+            // Para un script de JavaScript, el alcance de una variable global, se limita al documento actual que está cargado en la ventana del navegador. 
+            // Sin embargo cuando inicializas una variable como variable global, quiere decir que todas las instrucciones de tu script 
+            // (incluidas las instrucciones que están dentro de las funciones), tendrán acceso directo al valor de esa variable. 
+            // Todas las instrucciones podrán leer y modificar el valor de esa variable global.
+
+            // En el momento que una página se cierra, todas las variables definidas en esa página se eliminarán de la memoria para siempre. 
+            // Si necesitas que el valor de una variable persista de una página a otra, tendrás que utilizar técnicas que te permitan almacenar esa variable.
+
+            // En contraste a las variables globales, una variable local será definida dentro de una función. 
+            // Antes viste que podemos definir variables en los parámetros de una función, pero también podrás definir nuevas variables dentro del código de la función.
+
+            // El alcance de una variable local está solamente dentro del ámbito de la función. 
+            // Ninguna otra función o instrucciones fuera de la función podrán acceder al valor de esa variable.
+
+            // Reutilizar el nombre de una variable global como local es uno de los bugs más sutiles y por consiguiente más difíciles de encontrar en el código de JavaScript. 
+            // La variable local en momentos puntuales ocultará el valor de la variable global, sin avisarnos de ello. 
+            // Como recomendación, no reutilices un nombre de variable global como local en una función, y tampoco declares una variable global dentro de una función, ya que 
+            // podrás crear fallos que te resultarán difíciles de solucionar.
+
+            // Como ejemplo de ello puedes ver el siguiente ejemplo:
+
+            let nombre = 'Pepe';
+
+            const prueba = () => {
+                let nombre = 'Pedro';
+                console.log(nombre);      // Muestra por consola: Pedro
+            }
+
+            console.log(nombre);          // Muestra por consola: Pepe
+            
+            prueba();
+
+            console.log(nombre);          // Muestra por c
+
+        </script>
+    </head>
+
+    <body>
+
+        <h1>Ambito de Variables.</h1>
+        
+    </body>
+</html>

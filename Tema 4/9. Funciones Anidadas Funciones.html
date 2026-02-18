@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="es-ES">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>Funciones Anidadas.</title>
+
+
+        <script>
+
+            // En JavaScript podemos anidar unas funciones dentro de otras. Es decir podemos programar una función dentro de otra función.
+
+            // Cuando no tenemos funciones anidadas, cada función que definamos será accesible por todo el código, es decir serán funciones globales. 
+            // Con las funciones anidadas, podemos encapsular la accesibilidad de una función dentro de otra y hacer que esa función sea privada o local a la función principal. 
+            // Tampoco te recomiendo el reutilizar nombres de funciones con esta técnica, para evitar problemas o confusiones posteriores.
+
+            // Una buena opción para aplicar las funciones anidadas, es cuando tenemos una secuencia de instrucciones que necesitan ser llamadas desde múltiples sitios dentro de una función, 
+            // y esas instrucciones sólo tienen significado dentro del contexto de esa función principal. 
+            // En otras palabras, en lugar de romper la secuencia de una función muy larga en varias funciones globales, haremos lo mismo pero utilizando funciones locales.
+
+            // Ejemplo de una función anidada:
+
+            const calcularHipotenusa = (cateto1, cateto2) => {
+                const calcularCuadrado = (x) => { return x * x; }
+                return Math.sqrt(calcularCuadrado(cateto1) + calcularCuadrado(cateto2));
+            }
+
+            console.log(calcularHipotenusa(1, 2)); // Muestra por consola: 2.23606797749979             
+            
+        </script>
+    </head>
+
+    <body>
+
+        <h1>Funciones Anidadas.</h1>
+        
+    </body>
+</html>

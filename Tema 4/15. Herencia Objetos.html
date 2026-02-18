@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="es-ES">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>Herencia Objetos.</title>
+
+
+        <script>
+
+            // En JavaScript también podemos crear jerarquías de clases mediante la herencia. 
+            // Una clase puede heredar de otra previamente declarado y por lo tanto heredará su estructura y su comportamiento.
+
+            // Por ejemplo, podríamos tener una clase para almacenar contactos telefónicos en la que queremos almacenar además del nombre y el correo, el número de teléfono. 
+            // También queremos que el método saludar también devuelva información del teléfono.
+
+            class ContactoTelefonico extends Contacto {
+
+                telefono;
+
+                constructor(nombre, correo, telefono) {
+                    super(nombre, correo);
+                    this.telefono = telefono;
+                }
+
+                saludar() {
+                    return `${super.saludar()} y mi teléfono es ${this.telefono}`;
+                }
+            }
+
+            
+            let maria = new ContactoTelefonico('María', 'maria@gmail.com', '666112233');
+            console.log(maria.saludar());    // Muestra por consola: Hola soy María y mi correo es maria@gmail.com y mi teléfono es 666112233
+
+        </script>
+    </head>
+
+    <body>
+
+        <h1>Herencia Objetos.</h1>
+        
+    </body>
+</html>

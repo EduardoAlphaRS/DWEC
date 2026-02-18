@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="es-ES">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>Sintaxis.</title>
+
+
+        <script>
+             // Te mostraré algunos ejemplos en un momento, pero antes de nada, vamos a ver la sintaxis formal de una función:
+            
+            function nombreFuncion ( [parametro1]....[parametroN] )
+            {
+                // instrucciones
+                [return valor]
+            }
+
+
+            // Fíjate que si nuestra función va a devolver algún valor emplearemos la palabra reservada return, para hacerlo.
+
+            // Esta es la sintaxis tradicional para definir funciones, pero hoy día es más recomendable el uso del operador flecha (=>) para ello. 
+            // Nosotros utilizaremos esta sintaxis para ir acostumbrándonos a ella ya que en muchos casos nos ahorrará líneas de código y hará nuestro código más legible. 
+            // La sintaxis para utilizar el operador flecha es la siguiente:
+        
+            const nombreFuncion = ([parametro1]...[parametroN]) => {
+                // instrucciones
+                [return valor]
+            }
+
+
+            // Los nombres que puedes asignar a una función, tendrán las mismas restricciones que tienen los elementos HTML y las variables en JavaScript. 
+            // Deberías asignarle un nombre que realmente la identifique, o que indique qué tipo de acción realiza. 
+            // Puedes usar palabras compuestas como chequearCorreo o calcularFecha, y fíjate que las funciones suelen llevar un verbo, puesto que las funciones son elementos que realizan acciones.
+
+            // Una recomendación que te hacemos, es la de que las funciones sean muy específicas, es decir que no realicen tareas adicionales a las inicialmente propuestas en esa función.
+
+            // Para realizar una llamada a una función lo podemos hacer con:            
+
+            nombreFuncion( );  // Esta llamada ejecutaría las instrucciones programadas dentro de la función.
+
+
+            // Otro ejemplo de uso de una función que devuelve un valor y queremos recogerlo en una variable es utilizando una asignación:           
+
+            variable = nombreFuncion( );  // En este ca
+
+
+            // Las funciones en JavaScript también son objetos, y como tal tienen métodos y propiedades. Un método, aplicable a cualquier función puede ser toString(), el cuál nos devolverá el código 
+            // fuente de esa función.
+
+        </script>
+    </head>
+
+    <body>
+
+        <h1>Sintaxis.</h1>
+        
+    </body>
+</html>

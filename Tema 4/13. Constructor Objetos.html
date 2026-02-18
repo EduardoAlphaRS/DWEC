@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="es-ES">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>Constructor Objetos.</title>
+
+
+        <script>
+
+            // Como hemos comentado anteriormente, lo ideal es crear y asignar valores a las propiedades en el método constructor. 
+            // El método constructor es una función especial que es llamada cuando utilizamos el operador new de dicha clase. 
+            // Dicho método, si no es definido, es definido por defecto, pero lo ideal es que nosotros lo definamos y le demos la funcionalidad adecuada, que suele ser inicializar las propiedades.
+            
+            class Contacto {
+                constructor(nombre, correo) {
+                    this.nombre = nombre;
+                    this.correo = correo;
+                }
+            }
+
+
+            // En el siguiente ejemplo creamos dos objetos de la clase: en el primero utilizamos el constructor definido por nosotros mismos y en el segundo el constructor definido por defecto.
+
+            let pepe = new Contacto('Pepe', 'pepe@gmail.com');
+            console.log(pepe);      // Muestra por consola: Object { nombre: "Pepe", correo: "pepe@gmail.com" }
+
+            let juan = new Contacto();
+            console.log(juan);      // Muestra por consola: Object { nombre: undefined, correo: undefined }
+
+        </script>
+    </head>
+
+    <body>
+
+        <h1>Constructor Objetos.</h1>
+        
+    </body>
+</html>

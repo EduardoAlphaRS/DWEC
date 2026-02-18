@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="es-ES">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>Propiedadas Objetos.</title>
+
+
+        <script>
+
+            // Pero una clase no tendría sentido sin tener unas propiedades que sean específicas de cada uno de los objetos. 
+            // A eso se le suele llamar estado de un objeto, ya que las propiedades de un objeto dado serán diferentes a las de otro.
+
+            // Para declarar propiedades dentro de una clase simplemente las podemos declarar en el cuerpo de la clase, aunque como veremos ahora mismo, lo ideal es hacerlo en el método constructor. 
+            // Para referirnos a las propiedades debemos anteponer la palabra reservada this al nombre de la propiedad como veremos en breve.
+
+            class Contacto 
+            {
+                nombre;
+                correo;
+            }
+
+
+            // Ahora podremos crear objetos de dicha clase e inspeccionar sus propiedades.
+
+            let juan = new Contacto();
+            console.log(juan);      // Muestra por consola:
+
+
+            // Podemos acceder a las propiedades de un objeto utilizando el operador.
+
+            let juan = new Contacto();
+            console.log(juan.nombre);      // Muestra por consola: undefined
+
+            juan.nombre = 'Juan';
+            console.log(juan.nombre);      // Muestra por consola: Juan
+            
+        </script>
+    </head>
+
+    <body>
+
+        <h1>Propiedadas Objetos.</h1>
+        
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="es-ES">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>Creación de un array</title>
+
+
+        <script>
+
+            // Para crear un array, podemos utilizar varias sintaxis.
+
+            // Por ejemplo si tenemos las siguientes variables:
+
+            let coches = [ 'Seat', 'Audi', 'BMW', 'Toyota' ];
+            let numeros = [ 1, 5, 3, 9, 6, 4 ];
+            let diferentes = [ 'Pepe', 5, 'Juan', false ];
+
+            console.log(coches);
+            console.log(numeros);
+            console.log(diferentes);
+
+
+            //También es posible utilizar la sintaxis new Array() y luego ir asignado valores a los diferentes elementos, como por ejemplo:
+
+            let coches2 = new Array();
+
+            coches2[0] = 'Seat';
+            coches2[1] = 'Audi';
+            coches2[2] = 'BMW';
+            coches2[3] = 'Toyota';
+
+            console.log(coches2[0]);
+            console.log(coches2[1]);
+            console.log(coches2[2]);
+            console.log(coches2[3]);
+
+
+            //En JavaScript también es posible utilizar arrays asociativos, es decir, asociaciones clave-valor. Veamos un ejemplo:
+
+            let edades = new Array();
+
+            edades['Juan'] = 20;
+            edades['Ana'] = 18;
+            edades['Pedro'] = 25;
+
+            console.log(edades);
+            console.log(edades['Juan']);
+            console.log(edades['Ana']);
+            console.log(edades['Pedro']);
+
+        </script>
+    </head>
+
+    <body>
+
+        <h1>
+           Creación de un array
+        </h1>
+
+    </body>
+</html>

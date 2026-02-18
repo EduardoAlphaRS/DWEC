@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="es-ES">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>Recorrido de un array.</title>
+
+
+        <script>
+
+            // Para recorrer un array podemos utilizar uno de los bucles que ya conocemos. Por ejemplo, dado el siguiente array:
+
+            let numeros = [ 1, 5, 3, 9, 6, 4 ];
+
+
+            // Podríamos utilizar un bucle for para recorrerlo:
+
+            for (let i = 0; i < numeros.length; i++) 
+            {
+                console.log(numeros[i]);
+            }
+
+
+            // También existe un bucle especial para recorrer arrays en JavaScript; el denominado for-in:
+
+            for (let i in numeros) 
+            {
+                console.log(numeros[i]);
+            }
+
+
+            // Incluso podemos utilizar otras construcciones como la función forEach:
+
+            numeros.forEach(numero => console.log(numero));
+
+
+            // Es más, podemos utilizar las funciones map, reduce y filter para realizar algunas acciones comunes con los arrays:
+
+            let cuadrados = numeros.map(numero => {return numero * numero});
+
+            console.log(cuadrados);
+
+        </script>
+    </head>
+
+    <body>
+
+        <h1>
+           Recorrido de un array.
+        </h1>
+
+    </body>
+</html>

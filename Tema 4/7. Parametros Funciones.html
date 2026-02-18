@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="es-ES">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>Parametros.</title>
+
+
+        <script>
+            // Cuando se realiza una llamada a una función, muchas veces es necesario pasar parámetros (también conocidos como argumentos). Este mecanismo nos va a permitir enviar datos entre instrucciones.
+
+            // Para pasar parámetros a una función, tendremos que escribir dichos parámetros entre paréntesis y separados por comas.
+
+            // A la hora de definir una función que recibe parámetros, lo que haremos es, escribir los nombres de las variables que recibirán esos parámetros entre los paréntesis de la función.
+
+            // Veamos el siguiente ejemplo:
+
+            const saludar = (nombre) => {
+                 alert(`Hola ${nombre}`);
+            }
+
+
+            // Si llamamos a esa función desde el código:
+            saludar('Bob Esponja');      //Mostraría una alerta con el texto: Hola Bob Esponja.
+
+
+            // Los parámetros que usamos en la definición de la función serán variables locales a la función, y se inicializarán automáticamente en el momento de llamar a la función, con los valores que le 
+            // pasemos en la llamada. En el siguiente apartado entraremos más en profundidad en lo que son las variables locales y globales.
+
+            // Otro ejemplo de función que devuelve un valor podría ser el siguiente:
+
+            const calcularMayor = (num1, num2) => {
+                return (num1 > num2) ? num1 : num2;
+            }
+            
+
+            // Esta función la podemos invocar lo mismo que la anterior, simplemente que debemos tener en cuenta que devuelve un valor:  
+
+            console.log(calcularMayor(7, 5));
+
+        </script>
+    </head>
+
+    <body>
+
+        <h1>Parametros.</h1>
+        
+    </body>
+</html>

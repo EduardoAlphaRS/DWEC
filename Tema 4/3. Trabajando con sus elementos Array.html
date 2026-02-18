@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="es-ES">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>Trabajando con sus elementos.</title>
+
+
+        <script>
+
+            // Una vez creado un array, siempre podremos añadir nuevos elementos de forma dinámica utilizando un indice no utilizado.
+            numeros[6] = 15;
+
+            console.log(numeros);
+
+
+            // Debemos tener en cuenta que si no añadimos el nuevo elemento al final, las posiciones intermedias se quedarán con valores indefinidos.
+
+            // Podemos eliminar un elemento del array mediante la función delete, pero esta función no reduce el tamaño del array, simplemente borra el elemento:
+
+            delete numeros[6];
+
+            console.log(numeros.length);    // Muestra por consola: 7
+            console.log(numeros[6]);        // Muestra por consola: undefined
+
+
+            // Si lo que queremos es también reducir su tamaño deberemos utilizar la función splice; a esta función le indicamos la posición a partir de la cual empezamos a eliminar y el número de elementos:
+            numeros.splice(5, 2);
+
+            console.log(numeros);           // Muestra por consola: [ 1, 5, 3, 9, 6]
+
+        </script>
+    </head>
+
+    <body>
+
+        <h1>Trabajando con sus elementos.</h1>
+        
+    </body>
+</html>

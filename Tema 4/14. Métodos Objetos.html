@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="es-ES">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>Metodos Objetos.</title>
+
+
+        <script>
+
+            // Los métodos son funciones definidas en la propia clase que determinan el comportamiento de los objetos creados.
+
+            // Por ejemplo, podemos crear un método para nuestra clase encargado de devolver un mensaje de saludo que incluya los datos del objeto.
+
+            class Contacto {
+
+                nombre;
+                correo;
+
+                constructor(nombre, correo) {
+                    this.nombre = nombre;
+                    this.correo = correo;
+                }
+
+                saludar() {
+                    return `Hola, soy ${this.nombre} y mi correo es ${this.correo}`;
+                }
+            }
+
+            let pepe = new Contacto('Pepe', 'pepe@gmail.com');
+            console.log(pepe.saludar());   // Muestra por consola: Hola soy Pepe y mi correo es pepe@gmail.com
+
+
+            // También podemos definir métodos que serán comunes a toda la clase. 
+            // Son los llamados métodos estáticos y para declararlos debemos anteponer la palabra reservada static al nombre del método.            
+
+        </script>
+    </head>
+
+    <body>
+
+        <h1>Metodos Objetos.</h1>
+        
+    </body>
+</html>
