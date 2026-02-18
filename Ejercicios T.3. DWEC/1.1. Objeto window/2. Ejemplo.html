@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Demostración del Objeto Window</title>
+
+    <script>
+        
+        // 1. window.document        
+        function windowdocument()
+        {
+            // Se ejecuta inmediatamente para manipular el contenido de la página.
+
+            // Usando document.title (obtiene y establece)
+            window.document.title = "Título Cambiado por JS";
+
+            // Usando document.getElementById (selecciona un elemento)
+            const docInfo = window.document.getElementById("info-documento");
+
+            // Usando document.body (referencia al cuerpo del HTML)
+            docInfo.innerHTML += `El título actual es: <b>${window.document.title}</b>.`;
+        }
+
+
+        // 2. window.navigator
+        function windownavigator()
+        {
+            // Se ejecuta inmediatamente para obtener información del navegador.
+            const navInfo = window.document.getElementById("info-navegador");
+
+            // navigator.userAgent (información del motor del navegador)
+            navInfo.innerHTML += `<br>El User Agent es: <i>${window.navigator.userAgent.substring(0, 40)}...</i>`;
+
+            // navigator.onLine (estado de conexión)
+            navInfo.innerHTML += `<br>Estado de Conexión: <b>${window.navigator.onLine ? 'En línea' : 'Fuera de línea'}</b>.`;
+        }
+
+
+        // 3. window.location (Navegación) 
+        // Función llamada al hacer clic en el primer botón
+        function irANuevaPagina() {
+            // Redirecciona la página actual
+            const url = "https://www.google.com";
+            
+             // El uso explícito es:
+            window.open(url, "_blank");
+        }
+
+
+        // 4. window.history (Historial)
+
+        // Función llamada al hacer clic en el segundo botón
+        function mostrarHistorial() {
+            // Muestra cuántos elementos hay en el historial de navegación
+            alert(`Hay ${window.history.length} entradas en el historial de esta sesión.`);
+        }
+
+        // Función llamada al hacer clic en el tercer botón
+        function volverAtras() {
+            // Regresa a la página anterior en el historial
+            if (window.history.length > 1) {
+                // El uso abreviado es history.back();
+                // El uso explícito es:
+                window.history.back();
+            } else {
+                alert("No hay una página anterior a la que volver.");
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <h1>Uso de las propiedades clave: document, location, navigator, y history.</h1>
+
+    <p id="info-documento">Información del Documento:</p>
+
+    <p id="info-navegador">Información del Navegador: </p>
+
+    
+
+    <button onclick="windowdocument()">window.document</button> 
+
+    <button onclick="windownavigator()">window.navigator()</button>
+
+    <button onclick="irANuevaPagina()">window.location</button>
+
+    <button onclick="mostrarHistorial()">Mostrar Historial (window.history)</button>
+
+    <button onclick="volverAtras()">Volver Atrás (window.history.back)</button>
+
+</body>
+</html>
