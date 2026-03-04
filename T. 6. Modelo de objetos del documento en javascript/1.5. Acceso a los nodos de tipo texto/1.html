@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <title>1.3. Acceso a los nodos.</title>
+
+        <script type="text/javascript">
+
+            // Para poder referenciar el fragmento "texto HTML" del nodo p, lo que haremos será utilizar la colección childNodes. 
+            // Con la colección childNodes accederemos a los nodos hijo de un elemento, ya sean de tipo elemento o texto.    
+
+            function mostarTexto() 
+            {
+                alert(document.getElementsByTagName("p")[0].childNodes[1].childNodes[0].nodeValue);
+            }
+
+            // childNodes[1] : selecciona el segundo hijo de <p> que sería el elemento <b> (el primer hijo es un nodo de tipo Texto "Esto es un...").
+
+            // childNodes[0] : selecciona el primer hijo del elemento<b> que es el nodo de texto "texto HTML".
+
+        </script>
+
+    </head>
+
+    <body onload="mostarTexto()">
+
+        <!-- Para ver cómo podemos acceder a la información textual de un nodo. --> 
+
+        <p title="Texto de un párrafo">Esto es un ejemplo de <b>texto HTML<br /> que puedes tener</b> en tu documento.</p>
+
+    </body>
+
+</html>
