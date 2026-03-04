@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <title>1.3. Acceso a los nodos.</title>
+
+        <script type="text/javascript">
+
+            function mostarTexto()
+            {                
+                //Creamos tres elementos nuevos: p, b, br
+                let elementoP = document.createElement('p');
+                let elementoB = document.createElement('b');
+                let elementoBR = document.createElement('br');
+
+                //Le asignamos un nuevo atributo title al elementoP que hemos creado.
+                elementoP.setAttribute('title','Parrafo creado desde JavaScript');
+
+                //Preparamos los nodos de texto
+                let texto1 = document.createTextNode('Con JavaScript se ');
+                let texto2 = document.createTextNode('pueden realizar ');
+                let texto3 = document.createTextNode('un monton');
+                let texto4 = document.createTextNode(' de cosas sobre el documento.');
+
+                //Añadimos al elemento B los nodos de texto2, elemento BR y texto3.
+                elementoB.appendChild(texto2);
+                elementoB.appendChild(elementoBR);
+                elementoB.appendChild(texto3);
+
+                //Añadimos al elemento P los nodos de texto1, elemento B y texto 4.
+                elementoP.appendChild(texto1);
+                elementoP.appendChild(elementoB);
+                elementoP.appendChild(texto4);
+
+                //insertamos el nuevo párrafo como un nuevo hijo de nuestro parrafo
+                document.getElementById('parrafo').appendChild(elementoP);
+            }
+
+        </script>
+
+    </head>
+
+    <body onload="mostarTexto()">
+
+        <p title="Texto de un párrafo" id="parrafo">Esto es un ejemplo de <b>texto HTML<br /> que puedes tener</b> en tu documento.</p>
+
+    </body>
+
+</html>

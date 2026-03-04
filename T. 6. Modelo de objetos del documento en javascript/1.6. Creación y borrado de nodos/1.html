@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <title>1.3. Acceso a los nodos.</title>
+
+        <script type="text/javascript">
+
+            function mostarTexto() 
+            {
+                // Los métodos createElement(), createTextNode() y appendChild(), que nos permitirán crear un elemento, crear un nodo de texto y añadir un nuevo nodo hijo.
+
+                // Crear el nuevo párrafo.
+
+                let nuevoParrafo = document.createElement('p');
+                let nuevoTexto = document.createTextNode('Contenido añadido al párrafo.');
+
+                nuevoParrafo.appendChild(nuevoTexto);
+                document.getElementById('parrafo').appendChild(nuevoParrafo);
+
+                /* Obtendremos como resultado:
+                <p id="parrafo" title="Texto de un párrafo">
+                    Esto es un ejemplo de <b>texto HTML<br>que puedes tener</b>en tu documento. <p>Contenido añadido al párrafo.</p> 
+                </p>
+                */
+            }
+        </script>
+
+    </head>
+
+    <body onload="mostarTexto()">
+
+        <p title="Texto de un párrafo" id="parrafo">Esto es un ejemplo de <b>texto HTML<br /> que puedes tener</b> en tu documento.</p>
+
+    </body>
+
+</html>
