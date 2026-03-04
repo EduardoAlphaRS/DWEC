@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <title>1.3. Acceso a los nodos.</title>
+
+        <script type="text/javascript">
+
+            function nodo() 
+            {
+                // Para imprimir todos los atributos del elemento "apellidos", podríamos hacer un bucle que recorriera todos esos atributos imprimiendo su valor:
+                // También podemos modificar los valores de un atributo de un nodo manualmente:
+                document.getElementById("apellidos").attributes["type"].nodeValue="password";
+                // hemos puesto el nombre del atributo como referencia en el array de atributos.
+
+                alert("El elemento apellidos contiene los pares atributo -> valor: ");
+
+                for( let x = 0; x < document.getElementById("apellidos").attributes.length; x++) 
+                {
+                    var atributo = document.getElementById("apellidos").attributes[x];
+
+                    alert(atributo.nodeName+ " -> "+atributo.nodeValue);
+                }
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <p> <strong>1.3. Acceso a los nodos.</strong> </p>
+
+        Nombre: <input type="text" id="nombre" name="nombre" /> <br> <br>
+
+        Apellidos: <input type="text" id="apellidos" name="apellidos" /> <br> <br>
+
+        <input type="button" name="enviar" id="enviar" value="Enviar" onclick="nodo()"/>
+
+    </body>
+
+</html>
