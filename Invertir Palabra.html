@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inversor de Cadenas con Alert</title>
+</head>
+<body>
+
+    <h2>Inversor de palabras</h2>
+    
+    <input type="text" id="entrada" placeholder="Escribe algo...">
+    <button onclick="ejecutarInversion()">Invertir</button>
+    
+    <script>
+        // Tu función lógica
+        function invertirCadena(texto) {
+            return texto.split('').reverse().join('');
+        }
+
+        // Función que interactúa con el usuario mediante un alert
+        function ejecutarInversion() {
+            const input = document.getElementById("entrada").value;
+            
+            if (input === "") {
+                alert("Por favor, escribe algo primero.");
+            } else {
+                const resultado = invertirCadena(input);
+                // Aquí usamos alert en lugar de modificar el DOM
+                alert("La cadena invertida es: " + resultado);
+            }
+        }
+    </script>
+</body>
+</html>
