@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Ejemplo de Eventos del teclado en JavaScript.</title>
+
+</head>
+
+<body>
+
+    <form name="formulario" id="formulario">
+        <label for="nombre">Nombre: </label>
+        <input type="text" id="nombre" name="nombre" />
+        <label for="apellidos">Apellidos: </label>
+        <input type="text" id="apellidos" name="apellidos" />
+        <label for="provincia">Provincia: </label>
+        <input type="text" id="provincia" name="provincia" />
+        <input type="button" id="enviar" value="Enviar" />
+    </form>
+
+    
+    <script type="text/javascript">
+
+        const cambiar = (evt) => {
+
+            // Detectar la tecla Enter (Código 13)
+            if (evt.key === "Enter" || evt.keyCode === 13) {
+                evt.preventDefault(); // Evita que el formulario se envíe accidentalmente
+
+                // Convertimos la lista de inputs a un Array para manejar índices
+                const inputs = Array.from(document.querySelectorAll("input[type='text']"));
+                
+                const index = inputs.indexOf(evt.target);
+
+                // Si existe un siguiente input de texto, le damos el foco
+                if (index > -1 && index < inputs.length - 1) {
+                    inputs[index + 1].focus();
+                }
+            }
+        };
+
+        // Asignar el evento a todos los inputs
+        document.querySelectorAll("input[type='text']").forEach(input => {
+            input.addEventListener("keydown", cambiar);
+        });        
+
+    </script>
+
+</body>
+
+</html>
