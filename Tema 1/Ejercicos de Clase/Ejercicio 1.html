@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Pedir datos</title>
+
+        <script type="text/javascript">
+
+            const Saludo = () => {
+
+                let nombre = document.getElementById('nombre').value;
+                let apellido = document.getElementById('apellido').value;
+
+                alert(nombre + " " + apellido);
+            }
+
+        </script>
+</head>
+
+<body>
+
+
+<form  id="contactar" name="contactar" action="#">
+
+   Nombre: <input type="text" id="nombre" name="nombre"> 
+   <br><br>
+
+   
+   Apellidos: <input type="text" id="apellido" name="apellido">
+   <br><br>
+
+   <input type="reset" name="limpiar" id="limpiar" value="Limpiar" />
+   <input type="submit" name="enviar" id="enviar" value="Enviar" onClick="Saludo()"/>
+
+</form>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pedir datos</title>
+
+    <script type="text/javascript">
+        const validar = (event) => {
+            // Evita que el formulario se envíe automáticamente antes de validar
+            event.preventDefault();
+
+            // Capturar los valores de los campos
+            let nombre = document.getElementById('nombre').value.trim();
+            let apellido = document.getElementById('apellido').value.trim();
+            let edad = document.getElementById('edad').value.trim();
+            let direccion = document.getElementById('Dirección').value.trim();
+            let correo = document.getElementById('correo electronico').value.trim();
+
+            // 1. Validar Nombre
+            if (nombre === "") {
+                alert("Por favor, introduce tu nombre.");
+                document.getElementById('nombre').focus();
+                return false;
+            }
+
+            // 2. Validar Apellidos
+            if (apellido === "") {
+                alert("Por favor, introduce tus apellidos.");
+                document.getElementById('apellido').focus();
+                return false;
+            }
+
+            // 3. Validar Edad (Debe ser un número válido entre 1 y 120)
+            if (edad === "" || isNaN(edad) || edad <= 0 || edad > 120) {
+                alert("Por favor, introduce una edad válida (entre 1 y 120).");
+                document.getElementById('edad').focus();
+                return false;
+            }
+
+            // 4. Validar Dirección
+            if (direccion === "") {
+                alert("Por favor, introduce tu dirección.");
+                document.getElementById('Dirección').focus();
+                return false;
+            }
+
+            // 5. Validar Correo Electrónico (Expresión regular básica para email)
+            let regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (correo === "" || !regexCorreo.test(correo)) {
+                alert("Por favor, introduce un correo electrónico válido.");
+                document.getElementById('correo electronico').focus();
+                return false;
+            }
+
+            // Si todas las validaciones son correctas, se puede enviar el formulario
+            alert("¡Datos correctos! Enviando formulario...");
+            document.getElementById('contactar').submit();
+        }
+    </script>
+</head>
+
+<body>
+
+<form id="contactar" name="contactar" action="pagina2.php" method="GET">
+
+    Nombre: <input type="text" id="nombre" name="nombre"> 
+    <br><br>
+
+    Apellidos: <input type="text" id="apellido" name="apellido">
+    <br><br>
+
+    Edad: <input type="text" id="edad" name="edad">
+    <br><br>
+
+    Dirección: <input type="text" id="Dirección" name="Dirección">
+    <br><br>
+
+    Correo electrónico: <input type="text" id="correo electronico" name="correo electronico">
+    <br><br>
+
+    <input type="reset" name="limpiar" id="limpiar" value="Limpiar" />
+    <!-- Se usa un botón de tipo 'button' o se intercepta el submit con el evento -->
+    <input type="submit" name="enviar" id="enviar" value="Enviar" onclick="validar(event)"/>
+
+</form>
+
+</body>
+</html>
